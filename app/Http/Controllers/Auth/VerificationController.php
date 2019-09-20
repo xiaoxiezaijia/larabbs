@@ -36,6 +36,6 @@ class VerificationController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
-        $this->middleware('throttle:6,1')->only('verify', 'resend');
+        $this->middleware('throttle:6,1')->only('verify', 'resend'); //请求限制 1分钟不能超过 6 次
     }
 }
