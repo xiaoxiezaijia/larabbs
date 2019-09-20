@@ -18,7 +18,7 @@ class User extends Authenticatable implements MustVerifyEmailContract
     use Notifiable, MustVerifyEmailTrait;
 
     protected $fillable = [
-        'name', 'email', 'password', 'introduction',
+        'name', 'email', 'password', 'introduction', 'avatar',
     ];
 
     protected $hidden = [
