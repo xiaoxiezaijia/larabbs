@@ -35,7 +35,7 @@ class UsersController extends Controller
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user)
     {
         $this->authorize('update', $user);
-        
+
         $data = $request->all();
 //        在 Laravel 中，我们可直接通过 请求对象（Request） 来获取用户上传的文件，如以下两种方法：
 //        // 第一种方法
