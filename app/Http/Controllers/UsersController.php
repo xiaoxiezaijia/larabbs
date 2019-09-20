@@ -34,7 +34,7 @@ class UsersController extends Controller
 //        // 第二种方法，可读性更高
 //        $file = $request->avatar;
         if ($request->avatar) {
-            $result = $uploader->save($request->avatar, 'avatars', $user->id);
+            $result = $uploader->save($request->avatar, 'avatars', $user->id, 416);
             if ($result) {
                 $data['avatar'] = $result['path'];
             }
