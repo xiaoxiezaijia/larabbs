@@ -2,13 +2,21 @@
 
 namespace App\Policies;
 
-use App\Models\User;
-use App\Models\Reply;
+use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ReplyPolicy extends Policy
+class Policy
 {
-    public function destroy(User $user, Reply $reply)
+    use HandlesAuthorization;
+
+    public function __construct()
     {
-        return $user->isAuthorOf($reply) || $user->isAuthorOf($reply->topic);
+        //
     }
+
+    public function before($user, $ability)
+	{
+	    // if ($user->isSuperAdmin()) {
+	    // 		return true;
+	    // }
+	}
 }

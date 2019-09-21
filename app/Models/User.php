@@ -7,6 +7,7 @@ use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmailContract
 {
@@ -16,6 +17,7 @@ class User extends Authenticatable implements MustVerifyEmailContract
 //    markEmailAsVerified() 将用户标示为已认证；
 //    sendEmailVerificationNotification() 发送 Email 认证的消息通知，触发邮件的发送。
 //    得益于 PHP 的 trait 功能，User 模型在 use 以后，即可使用以上三个方法。
+    use HasRoles;
     use MustVerifyEmailTrait;
 
     use Notifiable {
