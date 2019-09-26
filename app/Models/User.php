@@ -22,6 +22,8 @@ class User extends Authenticatable implements MustVerifyEmailContract
 
     use Traits\ActiveUserHelper;
 
+    use Traits\LastActivedAtHelper;
+
     use Notifiable {
         notify as protected laravelNotify;
     }
@@ -96,4 +98,6 @@ class User extends Authenticatable implements MustVerifyEmailContract
 
         $this->attributes['avatar'] = $path;
     }
+
+
 }
