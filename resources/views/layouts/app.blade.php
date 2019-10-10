@@ -14,6 +14,8 @@
     <meta name="keyword" content="@yield('keyword', setting('seo_keyword', 'LaraBBS,社区,论坛,开发者论坛'))" />
 
     <!-- Styles -->
+    <!-- Styles -->
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
 
